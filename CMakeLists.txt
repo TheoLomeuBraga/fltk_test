@@ -16,15 +16,14 @@ add_subdirectory(lib/fltk)
 #include_directories( src lib/fltk ${OPENGL_INCLUDE_DIRS}  ${GLEW_INCLUDE_DIRS} )
 include_directories( src lib/fltk )
 
-add_executable(fltk_test1 src/fltk_test1.cpp)
+add_executable(fltk_text_editor src/fltk_text_editor.cpp)
 
 if(WIN32)
-    target_link_options(fltk_test1 PRIVATE -static -lwinpthread -static-libgcc -static-libstdc++)
+    target_link_options(fltk_text_editor PRIVATE -static -lwinpthread -static-libgcc -static-libstdc++)
 else()
-    target_link_options(fltk_test1 PRIVATE -static-libgcc -static-libstdc++)
+    target_link_options(fltk_text_editor PRIVATE -static-libgcc -static-libstdc++)
 endif()
 
-target_link_libraries(fltk_test1 PRIVATE fltk::fltk )
-#target_link_libraries(fltk_test1 PRIVATE OpenGL::OpenGL GLEW::GLEW ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} fltk::fltk fltk::images fltk::gl )
+target_link_libraries(fltk_text_editor PRIVATE fltk::fltk )
 
 
